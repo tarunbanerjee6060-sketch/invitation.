@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarun & Ashmitha Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  text-align: center;
+}
+
+section { padding: 40px 20px; }
+
+.invitation {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  letter-spacing: 6px;
+}
+
+.save {
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin-top: 8px;
+}
+
+.names {
+  margin: 40px 0;
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+}
+
+.names a {
+  color: #f5d76e;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.names a:hover {
+  text-shadow: 0 0 15px gold;
+}
+
+.message {
+  max-width: 700px;
+  margin: auto;
+  font-size: 16px;
+}
+
+.date {
+  font-size: 22px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.countdown {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #f5d76e;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 25px auto;
+  max-width: 800px;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  color: #f5d76e;
+  margin-bottom: 20px;
+}
+
+.ceremony-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.ceremony-box {
+  background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.03));
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 0 25px rgba(245,215,110,0.15);
+  transition: all 0.4s ease;
+  animation: fadeUp 1s ease forwards;
+}
+
+.ceremony-box:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 40px rgba(245,215,110,0.45);
+}
+
+.ceremony-box h4 {
+  font-family: 'Playfair Display', serif;
+  color: #f5d76e;
+  margin-bottom: 10px;
+}
+
+.ceremony-box p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  border: none;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  background: #f5d76e;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  margin: 30px 0;
+  font-size: 14px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <div class="invitation">INVITATION</div>
+  <div class="save">SAVE THE DATE</div>
+
+  <div class="names">
+    <a href="tarun.html">Tarun Banerjee</a><br>&<br>
+    <a href="ashmitha.html">Bhaskarabattla Ashmitha</a>
+  </div>
+
+  <div class="message">
+    Requesting your warm presence at the ceremony and celebration
+  </div>
+
+  <div class="date">25th February 2026</div>
+  <div class="countdown" id="countdown"></div>
+</section>
+
+<section class="card">
+<h3>CEREMONY DETAILS</h3>
+
+<div class="ceremony-grid">
+  <div class="ceremony-box">
+    <h4>Haldi Ceremony</h4>
+    <p>24 February 2026 · 1:00 PM<br>Yaara Resorts, Tuniki Bollaram</p>
+  </div>
+
+  <div class="ceremony-box">
+    <h4>Sangeet Ceremony</h4>
+    <p>24 February 2026 · 8:00 PM<br>Yaara Resorts, Tuniki Bollaram</p>
+  </div>
+
+  <div class="ceremony-box">
+    <h4>Wedding Ceremony</h4>
+    <p>25 February 2026 · 3:00 AM onwards<br>Yaara Resorts, Tuniki Bollaram</p>
+  </div>
+
+  <div class="ceremony-box">
+    <h4>Reception</h4>
+    <p>27 February 2026 · 6:00 PM onwards<br>Hotel SVM Grand, Dairy Farm Road</p>
+  </div>
+</div>
+</section>
+
+<section class="card">
+<h3>Wedding Venue Direction</h3>
+<iframe src="https://www.google.com/maps?q=17.72147,78.59297&z=15&output=embed"></iframe>
+</section>
+
+<section class="card">
+<h3>Reception Venue Direction</h3>
+<iframe src="https://www.google.com/maps?q=HOTEL%20SVM%20GRAND%20DAIRY%20FARM%20ROAD&output=embed"></iframe>
+</section>
+
+<section class="card">
+<h3>RSVP</h3>
+<input id="name" placeholder="Your Name">
+<select id="status">
+  <option>Attending</option>
+  <option>Not Attending</option>
+</select>
+<textarea id="msg" placeholder="Any best wishes to us"></textarea>
+<button onclick="sendWhatsApp()">Submit</button>
+</section>
+
+<footer>
+With Love<br>
+<strong>Tarun & Ashmitha | 2026</strong>
+</footer>
+
+<script>
+const weddingDate = new Date("Feb 25, 2026 03:00:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = weddingDate - now;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("countdown").innerHTML = days + " Days to Go";
+}, 1000);
+
+function sendWhatsApp() {
+  const name = document.getElementById("name").value;
+  const status = document.getElementById("status").value;
+  const msg = document.getElementById("msg").value;
+  const text = `Name: ${name}%0AStatus: ${status}%0AMessage: ${msg}`;
+  window.open(`https://wa.me/917799207000?text=${text}`, "_blank");
+}
+</script>
+
+</body>
+</html>
